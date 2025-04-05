@@ -32,7 +32,7 @@ The model uses a custom Inception module, inspired by GoogLeNet. It includes:
 ## Hyperparameters
 ```table
 Parameter	Value
-Optimizer	Adam
+Optimizer	AdamW
 Learning Rate	0.001
 Batch Size	16
 Epochs	20
@@ -41,6 +41,12 @@ Input Image Size	224 x 224
 Data Augmentation	Resize, RandomHorizontalFlip, Normalize
 Loss Function	CrossEntropyLoss
 ```
+## Training and Validation Process
+- Training (train_epoch):
+The train_epoch function handles the training of the model for one epoch. It iterates through the training data loader, computes the loss using the criterion, performs backpropagation, and updates the model parameters using the optimizer. Additionally, it calculates the training accuracy and logs the progress for monitoring purposes.
+
+- Validation (validate):
+The validate function evaluates the model's performance on the validation dataset. It iterates through the validation data loader, computes the loss using the criterion, and calculates validation accuracy. This function does not update model parameters but is used to assess generalization performance.
 
 ## Improvements and Future Updates
 - Apply transfer learning using pretrained models (e.g., ResNet, EfficientNet)
